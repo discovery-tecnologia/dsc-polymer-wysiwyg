@@ -1,0 +1,41 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-textarea.html">
+<link rel="import" href="dsc-polymer-wysiwyg-toolbar.html">
+
+<!--
+`dsc-polymer-wysiwyg`
+Editor wysiwyg with Polymer
+
+@demo demo/index.html 
+-->
+
+<dom-module id="dsc-polymer-wysiwyg">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    
+    <div id="dsc-container">
+        <dsc-polymer-wysiwyg-toolbar></dsc-polymer-wysiwyg-toolbar>
+        <paper-textarea name="message" value="Hello world!" rows="5" required></paper-textarea>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'dsc-polymer-wysiwyg',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'dsc-polymer-wysiwyg',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

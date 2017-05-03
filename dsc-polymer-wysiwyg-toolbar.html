@@ -1,0 +1,44 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../paper-listbox/paper-listbox.html">
+<link rel="import" href="../paper-item/paper-item.html">
+
+<dom-module id="dsc-polymer-wysiwyg-toolbar">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height: 65px;
+        border: 1px solid #ccc;
+        padding-left: 8px;
+      }
+
+      paper-dropdown-menu, paper-listbox {
+        width: 100px;
+      }
+      
+      paper-dropdown-menu {
+        height: 30px;
+      }
+    </style>
+    
+
+        <paper-dropdown-menu label="Headers">
+        <paper-listbox class="dropdown-content">
+            <paper-item>Header 1</paper-item>
+            <paper-item>Header 2</paper-item>
+            <paper-item>Header 3</paper-item>
+            <paper-item>Header 4</paper-item>
+            <paper-item>Header 5</paper-item>
+            <paper-item>Normal</paper-item>
+        </paper-listbox>
+        </paper-dropdown-menu>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'dsc-polymer-wysiwyg-toolbar',
+    });
+  </script>
+</dom-module>
