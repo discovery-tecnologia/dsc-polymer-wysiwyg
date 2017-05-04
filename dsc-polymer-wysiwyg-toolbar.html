@@ -1,7 +1,9 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../paper-listbox/paper-listbox.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="dsc-polymer-wysiwyg-icons.html">
 
 <dom-module id="dsc-polymer-wysiwyg-toolbar">
   <template>
@@ -9,21 +11,50 @@
       :host {
         display: block;
         height: 65px;
-        border: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-top: 5px solid #454545;
+        border-radius: 2px 2px 0 0;
+        -webkit-border-radius: 2px 2px 0 0;
         padding-left: 8px;
       }
 
       paper-dropdown-menu, paper-listbox {
+        margin-top: -15px;
         width: 100px;
       }
       
       paper-dropdown-menu {
         height: 30px;
       }
+
+      .w-scope {
+        padding-left: 15px;
+        padding-right: 7px;
+        border-right: 1px solid #ccc;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        padding: 4px;        
+      }
+
+
+
+      .w-action {
+        height: 50px;
+        width: 50px;
+      }
+
+      .big-icon {
+        --iron-icon-height: 26px;
+        --iron-icon-width: 26px;
+        --iron-icon-fill-color: #454545;
+      }
     </style>
     
 
-        <paper-dropdown-menu label="Headers">
+        <paper-dropdown-menu>
         <paper-listbox class="dropdown-content">
             <paper-item>Header 1</paper-item>
             <paper-item>Header 2</paper-item>
@@ -33,6 +64,94 @@
             <paper-item>Normal</paper-item>
         </paper-listbox>
         </paper-dropdown-menu>
+
+        <span class="w-scope">
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-bold"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-italic"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-underlined"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-strikethrough"></iron-icon>
+          </a>
+        </span>
+
+        <span class="w-scope">
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-color-fill"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-color-text"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-color-reset"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-size"></iron-icon>
+          </a>
+        </span>
+
+        <span class="w-scope">
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-align-left"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-align-center"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-align-justify"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-align-right"></iron-icon>
+          </a>
+        </span>
+
+        <span class="w-scope">
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-list-bulleted"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-list-numbered"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-indent-decrease"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-indent-increase"></iron-icon>
+          </a>
+        </span>
+
+        <span class="w-scope">
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:insert-link"></iron-icon>
+          </a>
+
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:insert-photo"></iron-icon>
+          </a>
+        </span>
+
+        <span class="w-scope">
+          <a class="w-action" href="#">
+            <iron-icon class="big-icon" icon="wysiwyg-icons:format-clear"></iron-icon>
+          </a>
+        </span>
 
   </template>
 
