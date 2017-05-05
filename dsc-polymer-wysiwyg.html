@@ -20,12 +20,6 @@ Editor wysiwyg with Polymer
     <style>
       :host {
         display: block;
-        height: 65px;
-        border-bottom: 1px solid #ccc;
-        border-top: 5px solid #454545;
-        border-radius: 2px 2px 0 0;
-        -webkit-border-radius: 2px 2px 0 0;
-        padding-left: 8px;
       }
 
       paper-dropdown-menu, paper-listbox {
@@ -37,12 +31,6 @@ Editor wysiwyg with Polymer
         height: 30px;
       }
 
-      span.w-scope {
-        padding-left: 15px;
-        padding-right: 7px;
-        border-right: 1px solid #ccc;
-      }
-
       paper-icon-button {
         text-decoration: none;
         color: inherit;
@@ -52,10 +40,25 @@ Editor wysiwyg with Polymer
         --iron-icon-fill-color: #454545;    
       }
 
+      .w-toolbar {
+        height: 65px;
+        border-bottom: 1px solid #ccc;
+        border-top: 5px solid #454545;
+        border-radius: 2px 2px 0 0;
+        -webkit-border-radius: 2px 2px 0 0;
+        padding-left: 8px;
+      }
+
+      span.w-scope {
+        padding-left: 15px;
+        padding-right: 7px;
+        border-right: 1px solid #ccc;
+      }      
+
     </style>
     
     <main>
-        
+      <div class="w-toolbar">
         <paper-dropdown-menu hidden$="[[hiddenFontsFormat]]">
           <paper-listbox class="dropdown-content">
               <paper-item>Header 1</paper-item>
@@ -103,7 +106,11 @@ Editor wysiwyg with Polymer
         <span class="w-scope">
           <paper-icon-button icon="wysiwyg-icons:format-clear" on-click="refresh" title="Clear"></paper-icon-button>
         </span>
+      </div>
+      <div class="w-editor">
         <paper-textarea name="message" value="Hello world!" rows="8" required></paper-textarea>
+      </div>
+        
     </main>
 
   </template>
