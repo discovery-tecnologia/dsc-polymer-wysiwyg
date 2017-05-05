@@ -2,6 +2,7 @@
 <link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../paper-listbox/paper-listbox.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../paper-item/paper-item.html">
 <link rel="import" href="../paper-input/paper-textarea.html">
 
@@ -36,28 +37,21 @@ Editor wysiwyg with Polymer
         height: 30px;
       }
 
-      .w-scope {
+      span.w-scope {
         padding-left: 15px;
         padding-right: 7px;
         border-right: 1px solid #ccc;
       }
 
-      a {
+      paper-icon-button {
         text-decoration: none;
         color: inherit;
-        padding: 4px;        
+        padding: 2px;  
+        height: 26px;
+        width: 26px;  
+        --iron-icon-fill-color: #454545;    
       }
 
-      .w-action {
-        height: 50px;
-        width: 50px;
-      }
-
-      .big-icon {
-        --iron-icon-height: 26px;
-        --iron-icon-width: 26px;
-        --iron-icon-fill-color: #454545;
-      }
     </style>
     
     <main>
@@ -74,91 +68,40 @@ Editor wysiwyg with Polymer
         </paper-dropdown-menu>
 
         <span class="w-scope" hidden$="{{showFontsFormat}}">
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-bold"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-italic"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-underlined"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-strikethrough"></iron-icon>
-          </a>
+          <paper-icon-button icon="wysiwyg-icons:format-bold" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-italic" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-underlined" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-strikethrough" on-click="refresh" title="Refresh data"></paper-icon-button>
         </span>
 
         <span class="w-scope" hidden$="{{showFormatColor}}">
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-color-fill"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-color-text"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-color-reset"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-size"></iron-icon>
-          </a>
+          <paper-icon-button icon="wysiwyg-icons:format-color-fill" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-color-text" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-color-reset" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-size" on-click="refresh" title="Refresh data"></paper-icon-button>
         </span>
 
         <span class="w-scope" hidden$="{{showFormatAlign}}">
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-align-left"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-align-center"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-align-justify"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-align-right"></iron-icon>
-          </a>
+          <paper-icon-button icon="wysiwyg-icons:format-align-left" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-align-center" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-align-justify" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-align-right" on-click="refresh" title="Refresh data"></paper-icon-button>
         </span>
 
         <span class="w-scope">
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-list-bulleted"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-list-numbered"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-indent-decrease"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-indent-increase"></iron-icon>
-          </a>
+          <paper-icon-button icon="wysiwyg-icons:format-list-bulleted" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-list-numbered" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-indent-decrease" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:format-indent-increase" on-click="refresh" title="Refresh data"></paper-icon-button>
         </span>
 
         <span class="w-scope">
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:insert-link"></iron-icon>
-          </a>
-
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:insert-photo"></iron-icon>
-          </a>
+          <paper-icon-button icon="wysiwyg-icons:insert-link" on-click="refresh" title="Refresh data"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:insert-photo" on-click="refresh" title="Refresh data"></paper-icon-button>
         </span>
 
         <span class="w-scope">
-          <a class="w-action" href="#">
-            <iron-icon class="big-icon" icon="wysiwyg-icons:format-clear"></iron-icon>
-          </a>
+          <paper-icon-button icon="wysiwyg-icons:format-clear" on-click="refresh" title="Refresh data"></paper-icon-button>
         </span>
 
         <paper-textarea name="message" value="Hello world!" rows="8" required></paper-textarea>
