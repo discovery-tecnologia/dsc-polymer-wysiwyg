@@ -56,7 +56,7 @@ Editor wysiwyg with Polymer
     
     <main>
         
-        <paper-dropdown-menu hidden$="{{showFontsFormat}}">
+        <paper-dropdown-menu hidden$="[[hiddenFontsFormat]]">
           <paper-listbox class="dropdown-content">
               <paper-item>Header 1</paper-item>
               <paper-item>Header 2</paper-item>
@@ -67,28 +67,28 @@ Editor wysiwyg with Polymer
           </paper-listbox>
         </paper-dropdown-menu>
 
-        <span class="w-scope" hidden$="{{showFontsFormat}}">
+        <span class="w-scope" hidden$="[[hiddenFontsFormat]]">
           <paper-icon-button icon="wysiwyg-icons:format-bold" on-click="refresh" title="Bold"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-italic" on-click="refresh" title="Italic"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-underlined" on-click="refresh" title="Underline"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-strikethrough" on-click="refresh" title="Strike"></paper-icon-button>
         </span>
 
-        <span class="w-scope" hidden$="{{showFormatColor}}">
+        <span class="w-scope" hidden$="[[hiddenFormatColor]]">
           <paper-icon-button icon="wysiwyg-icons:format-color-fill" on-click="refresh" title="Color fill"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-color-text" on-click="refresh" title="Color text"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-color-reset" on-click="refresh" title="Color reset"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-size" on-click="refresh" title="Format size"></paper-icon-button>
         </span>
 
-        <span class="w-scope" hidden$="{{showFormatAlign}}">
+        <span class="w-scope" hidden$="[[hiddenFormatAlign]]">
           <paper-icon-button icon="wysiwyg-icons:format-align-left" on-click="refresh" title="Align left"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-align-center" on-click="refresh" title="Align center"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-align-justify" on-click="refresh" title="Justify"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-align-right" on-click="refresh" title="Align right"></paper-icon-button>
         </span>
 
-        <span class="w-scope">
+        <span class="w-scope" hidden$="[[hiddenFormatList]]">
           <paper-icon-button icon="wysiwyg-icons:format-list-bulleted" on-click="refresh" title="List bullet"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-list-numbered" on-click="refresh" title="List number"></paper-icon-button>
           <paper-icon-button icon="wysiwyg-icons:format-indent-decrease" on-click="refresh" title="Indent decrease"></paper-icon-button>
@@ -96,14 +96,13 @@ Editor wysiwyg with Polymer
         </span>
 
         <span class="w-scope">
-          <paper-icon-button icon="wysiwyg-icons:insert-link" on-click="refresh" title="Insert link"></paper-icon-button>
-          <paper-icon-button icon="wysiwyg-icons:insert-photo" on-click="refresh" title="Insert photo"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:insert-link" on-click="refresh" title="Insert link" hidden$="[[hiddenInsertLink]]"></paper-icon-button>
+          <paper-icon-button icon="wysiwyg-icons:insert-photo" on-click="refresh" title="Insert photo" hidden$="[[hiddenInsertPhoto]]"></paper-icon-button>
         </span>
 
         <span class="w-scope">
           <paper-icon-button icon="wysiwyg-icons:format-clear" on-click="refresh" title="Clear"></paper-icon-button>
         </span>
-
         <paper-textarea name="message" value="Hello world!" rows="8" required></paper-textarea>
     </main>
 
@@ -116,22 +115,32 @@ Editor wysiwyg with Polymer
 
       properties: {
         
-        showFontsFormat: {
+        hiddenFontsFormat: {
           type: Boolean,
           value: false
         },
 
-        showFormatColor: {
+        hiddenFormatColor: {
           type: Boolean,
           value: false
         },
 
-        showFormatAlign: {
+        hiddenFormatAlign: {
           type: Boolean,
           value: false
         },
 
-        showFormatList: {
+        hiddenFormatList: {
+          type: Boolean,
+          value: false
+        },
+
+        hiddenInsertLink: {
+          type: Boolean,
+          value: false
+        },
+
+        hiddenInsertPhoto: {
           type: Boolean,
           value: false
         }
